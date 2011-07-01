@@ -16,7 +16,8 @@ class Pages_model extends CI_Model {
 		$this->db->select('content');
 		$this->db->from('pages');
 		$query = $this->db->get();
-		$result = $query->result();
+		$result = $query->row();
+		return $result->content;
 	}
 	
 	public function edit($name, $content) {
