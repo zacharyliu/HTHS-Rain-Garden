@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<?php
+$this->load->helper('url');
+?><!DOCTYPE html>
 <html>
 <head>
 	<title><?php echo $name; ?>HTHS Rain Garden</title>
@@ -9,7 +11,7 @@
 		<h1>HTHS Rain Garden</h1>
 		<ul>
 		<?php foreach ($list as $row): ?>
-		<li><?php echo $row->name; ?></li>
+		<li><?php echo anchor($row->name, $row->name); ?></li>
 		<?php endforeach; ?>
 		</ul>
 		</div>
