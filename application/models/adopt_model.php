@@ -6,7 +6,7 @@ class Adopt_model extends CI_Model {
 		
 	}
 	
-	public function get_info($key) {
+	public function get_info($id) {
 		
 	}
 	

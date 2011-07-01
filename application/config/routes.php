@@ -41,6 +41,7 @@
 $route['default_controller'] = "pages";
 $route['404_override'] = '';
 
+$route['adopt(:any)'] = "adopt$1";
 $route['adopt'] = "adopt";
 $route['(:any)'] = "pages/page/$1";
 

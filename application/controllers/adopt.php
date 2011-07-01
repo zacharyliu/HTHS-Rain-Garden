@@ -3,7 +3,6 @@
 class Adopt extends CI_Controller {
 	
 	public function index() {
-		$this->load->model('Adopt_model');
 		$this->load->model('Pages_model');
 		
 		$data['name'] = "Adopt";
@@ -13,8 +12,10 @@ class Adopt extends CI_Controller {
 		$this->load->view('template', $data);
 	}
 	
-	public function view($format = "html") {
+	public function view($id, $format = "html") {
+		$this->load->model('Adopt_model');
 		
+		$this->Adopt_model->get_info($id);
 	}
 	
 }
