@@ -45,6 +45,6 @@ body {
 	border-right: 1px solid black;
 	border-top: 1px solid black;
 }
-#header a:hover {
+#header li a:hover {
 	padding-top: 30px;
 }
