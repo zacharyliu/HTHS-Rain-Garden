@@ -7,7 +7,7 @@ class Adopt extends CI_Controller {
 		$this->load->model('Pages_model');
 		
 		$data['name'] = "Adopt";
-		$data['content'] = "testing";
+		$data['content'] = $this->load->view('adopt_view', '', true);
 		$data['list'] = $this->Pages_model->get_list();
 		
 		$this->load->view('template', $data);
