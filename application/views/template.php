@@ -9,10 +9,10 @@ $this->load->helper('url');
 <body>
 	<div id="wrap">
 		<div id="header">
-		<h1>HTHS Rain Garden</h1>
+		<h1><?php echo anchor("", "HTHS Rain Garden"); ?></h1>
 		<ul>
 		<?php foreach ($list as $row): ?>
-		<li><?php echo anchor($row->name, $row->name); ?></li>
+		<li><?php echo anchor($row->slug, $row->name); ?></li>
 		<?php endforeach; ?>
 		</ul>
 		</div>

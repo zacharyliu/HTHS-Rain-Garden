@@ -4,7 +4,7 @@ class Pages_model extends CI_Model {
 	
 	public function get_list() {
 		$this->load->database();
-		$this->db->select('name');
+		$this->db->select(array('slug', 'name'));
 		$this->db->from('pages');
 		$query = $this->db->get();
 		return $query->result();
