@@ -4,6 +4,7 @@ $this->load->helper('url');
 <html>
 <head>
 	<title><?php echo $name; ?>HTHS Rain Garden</title>
+	<link href="<?php echo base_url(); ?>css/main.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 	<div id="wrap">
@@ -19,6 +20,7 @@ $this->load->helper('url');
 		<?php echo $content; ?>
 		</div>
 		<div id="footer">
+		Site by Zachary Liu, 2011.
 		</div>
 	</div>
 </body>
