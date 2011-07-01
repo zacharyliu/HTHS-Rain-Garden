@@ -15,7 +15,7 @@ class Adopt extends CI_Controller {
 	public function view($id, $format = "html") {
 		$this->load->model('Adopt_model');
 		
-		$this->Adopt_model->get_info($id);
+		$data['content'] = $this->Adopt_model->get_info($id);
 	}
 	
 }
