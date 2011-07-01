@@ -2,7 +2,7 @@
 <?php
 $this->load->helper('form');
 
-echo form_open('user/login');
+echo form_open('user/register/submit');
 echo form_label('Username', 'username');
 echo '<br />';
 echo form_input(array('name' => 'username', 'id' => 'username'));
