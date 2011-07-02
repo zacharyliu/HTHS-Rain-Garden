@@ -27,4 +27,25 @@ class Adopt extends CI_Controller {
 		}
 	}
 	
+	public function add($id) {
+		if ($id == "submit") {
+			$this->load->library('input');
+			$this->load->database();
+			
+			$data = array(
+				'id' => $this->input->post('id'),
+				'plant_type_id' => $this->input->post('plant_type_id'),
+			);
+			$this->db->insert('garden', $data);
+		} else {
+			$form_data['id'] = $id;
+			$data['content'] = $this->load->view('adopt_add_view', $form_data, true);
+			$data['name'] = "Add Garden Plant";
+			
+			$this->load->model('Pages_model');
+			$data['list'] = $this->Pages_model->get_list();
+			
+			$this->load->view('template', $data);
+		}
+	}
 }
