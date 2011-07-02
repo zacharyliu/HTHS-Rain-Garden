@@ -12,15 +12,10 @@ class User extends CI_Controller {
 			$username = $this->input->post('username');
 			$password = $this->input->post('password');
 			
-			$this->load->database();
-			$this->db->where(array('username' => $username, 'password' => $this->_hash_pw($password)));
-			$this->db->from('users');
-			$query = $this->db->get();
-			if ($query->num_rows() == 1) {
-				echo "success";
-				
-				return;
-			}
+			$this->simplelogin->login($username, $password);
+			
+			$this->load->helper('url');
+			redirect('');
 		}
 		
 		$data['content'] = $this->load->view('login_view', '', true);
@@ -40,13 +35,10 @@ class User extends CI_Controller {
 			
 			if ($password == $confirmpassword) {
 				$username = $this->input->post('username');
-			
-				$this->load->database();
-				$data = array('username' => $username, 'password' => $this->_hash_pw($password));
-				$this->db->insert('users', $data);
 				
-				echo "success";
-				
+				$this->simplelogin->create($username, $password);
+				$this->load->helper('url');
+				redirect('');
 				return;
 			}
 		}
@@ -61,6 +53,12 @@ class User extends CI_Controller {
 		$data['list'] = $this->Pages_model->get_list();
 		
 		$this->load->view('template', $data);
+	}
+	
+	public function logout() {
+		$this->simplelogin->logout();
+		$this->load->helper('url');
+		redirect('');
 	}
 	
 }

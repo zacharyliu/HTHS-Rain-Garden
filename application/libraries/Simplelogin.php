@@ -58,7 +58,7 @@ class Simplelogin
 		
 		//Check against user table
 		$this->CI->db->where('username', $user); 
-		$query = $this->CI->db->getwhere($this->user_table);
+		$query = $this->CI->db->get_where($this->user_table);
 		
 		if ($query->num_rows() > 0) {
 			//username already exists
@@ -153,7 +153,7 @@ class Simplelogin
 		
 		//Check against user table
 		$this->CI->db->where('username', $user); 
-		$query = $this->CI->db->getwhere($this->user_table);
+		$query = $this->CI->db->get_where($this->user_table);
 		
 		if ($query->num_rows() > 0) {
 			$row = $query->row_array(); 
