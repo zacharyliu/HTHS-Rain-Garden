@@ -9,14 +9,15 @@ class Adopt_model extends CI_Model {
 	public function get_info($id) {
 		$this->load->database();
 		
-		$this->db->select('content');
+		$this->db->select('plant_type_id');
 		$this->db->where('id', $id);
 		$this->db->from('garden');
 		$query = $this->db->get();
-		
-		$result = $query->row();
-		
-		return $result->content;
+		if ($query->num_rows() < 1) {
+			return false;
+		} else {
+			return $query->row_array();
+		}
 	}
 	
 }

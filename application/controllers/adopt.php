@@ -15,7 +15,16 @@ class Adopt extends CI_Controller {
 	public function view($id, $format = "html") {
 		$this->load->model('Adopt_model');
 		
-		$data['content'] = $this->Adopt_model->get_info($id);
+		$data = $this->Adopt_model->get_info($id);
+		
+		if ($data == false) {
+			$this->load->helper('url');
+			echo anchor(array('adopt', 'add', $id), "That plant is not in the database yet. Would you like to enter it in now?");
+		} else {
+			foreach ($data as $item) {
+				echo $item;
+			}
+		}
 	}
 	
 }
