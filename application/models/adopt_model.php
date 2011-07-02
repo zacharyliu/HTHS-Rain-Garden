@@ -16,7 +16,7 @@ class Adopt_model extends CI_Model {
 		if ($query->num_rows() < 1) {
 			return false;
 		} else {
-			return $query->row_array();
+			return $query->row();
 		}
 	}
 	

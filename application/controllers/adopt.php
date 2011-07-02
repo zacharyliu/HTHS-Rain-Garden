@@ -21,9 +21,10 @@ class Adopt extends CI_Controller {
 			$this->load->helper('url');
 			echo anchor(array('adopt', 'add', $id), "That plant is not in the database yet. Would you like to enter it in now?");
 		} else {
-			foreach ($data as $item) {
-				echo $item;
-			}
+			$this->load->model('Plants_model');
+			$id = $data->plant_type_id;
+			$info = $this->Plants_model->get($id);
+			echo $info->title;
 		}
 	}
 	
@@ -37,8 +38,15 @@ class Adopt extends CI_Controller {
 				'plant_type_id' => $this->input->post('plant_type_id'),
 			);
 			$this->db->insert('garden', $data);
+			
+			$this->load->helper('url');
+			redirect('/adopt');
 		} else {
 			$form_data['id'] = $id;
+			
+			$this->load->model('Plants_model');
+			$form_data['plants'] = $this->Plants_model->get_all();
+			
 			$data['content'] = $this->load->view('adopt_add_view', $form_data, true);
 			$data['name'] = "Add Garden Plant";
 			
