@@ -27,7 +27,7 @@ class User extends CI_Controller {
 		$this->load->view('template', $data);
 	}
 	
-	public function register($action = null) {
+	/*public function register($action = null) {
 		if ($action == "submit") {
 			$this->load->library('input');
 			$password = $this->input->post('password');
@@ -53,7 +53,7 @@ class User extends CI_Controller {
 		$data['list'] = $this->Pages_model->get_list();
 		
 		$this->load->view('template', $data);
-	}
+	}*/
 	
 	public function logout() {
 		$this->simplelogin->logout();

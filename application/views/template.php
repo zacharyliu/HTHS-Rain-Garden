@@ -11,6 +11,16 @@ $this->load->helper('url');
 	<div id="wrap">
 		<div id="header">
 		<h1><?php echo anchor("", "HTHS Rain Garden"); ?></h1>
+		<div id="user">
+		<?php
+			if ($this->session->userdata('logged_in')) {
+				echo 'Welcome, ' . $this->session->userdata('username') . ' | ' . anchor('user/logout', 'Logout');
+			} else {
+				$this->load->helper('url');
+				echo anchor('user/login', 'Login')/* . ' | ' . anchor('user/register', 'Register')*/;
+			}
+		?>
+		</div>
 		<ul>
 		<?php foreach ($list as $row): ?>
 		<li><?php echo anchor($row->slug, $row->name); ?></li>

@@ -16,6 +16,10 @@ body {
 	position: relative;
 	border-bottom: 1px solid black;
 }
+#header #user {
+	text-align: right;
+	margin-top: 15px;
+}
 #header h1 {
 	margin: 0;
 	padding: 0;
