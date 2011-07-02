@@ -19,7 +19,10 @@ echo form_textarea('links', $links);
 echo "<br /><br />";
 
 echo "Image<br />";
-echo form_input('image', $image);
+if ($image != '') {
+	echo 'An image is currently set. Uploading a new image will replace it.<br />';
+}
+echo form_upload('image');
 echo "<br /><br />";
 
 echo form_submit('submit', 'Submit');

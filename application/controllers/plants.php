@@ -25,7 +25,22 @@ class Plants extends CI_Controller {
 				$data['title'] = $this->input->post('title');
 				$data['content'] = $this->input->post('content');
 				$data['links'] = $this->input->post('links');
-				$data['image'] = $this->input->post('image');
+				
+				$this->load->helper('inflector');
+				$filename = underscore($this->input->post('title')) . '.jpg';
+				$this->load->library('upload', array(
+					'upload_path' => './img/plants',
+					'allowed_types' => 'jpg',
+					'file_name' => $filename,
+					'max_size' => '1000',
+				));
+				if (!$this->upload->do_upload('image')) {
+					if ($this->upload->display_errors() != "You did not select a file to upload.") {
+						echo $this->upload->display_errors();
+					}
+				} else {
+					$data['image'] = $filename;
+				}
 				
 				if ($this->input->post('id') == "") {
 					$this->db->insert('plants', $data);
