@@ -39,6 +39,13 @@ class Plants extends CI_Controller {
 						echo $this->upload->display_errors();
 					}
 				} else {
+					$this->load->library('image_lib', array(
+						'source_image' => './img/plants/' . $filename,
+						'maintain_ratio' => true,
+						'width' => '300',
+						'height' => '300',
+					));
+					$this->image_lib->resize();
 					$data['image'] = $filename;
 				}
 				
