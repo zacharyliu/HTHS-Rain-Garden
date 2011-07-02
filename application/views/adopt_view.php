@@ -26,10 +26,9 @@ function view(id) {
 		$.modal(data, {
 			overlayClose: true,
 			onOpen: function(dialog) {
-				dialog.overlay.fadeIn('slow', function() {
-					dialog.data.show();
-					dialog.container.fadeIn('slow');
-				});
+				dialog.overlay.fadeIn('fast')
+				dialog.data.show();
+				dialog.container.fadeIn('fast');
 			},
 			onClose: function(dialog) {
 				dialog.container.fadeOut('fast');
