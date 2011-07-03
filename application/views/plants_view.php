@@ -12,6 +12,13 @@ $this->load->helper('url');
 foreach ($data as $item):
 ?>
 <div class="plant_item">
+	<div class="plant_image">
+		<?php
+			if ($item->image != "") {
+				echo '<img src="' . base_url() . 'img/plants/' . $item->image . '"></img>';
+			}
+		?>
+	</div>
 	<div class="plant_title">
 	<?php echo $item->title ?>
 	</div>
