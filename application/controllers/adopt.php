@@ -32,10 +32,10 @@ class Adopt extends CI_Controller {
 				$data2['info'][$key] = $value;
 			}
 			
-			if ($data->adopter == "") {
-				$data2['adopt_box'] = $this->load->view('adopt/none', '', true);
+			if ($data->adopter_name == "") {
+				$data2['adopt_box'] = $this->load->view('adopt/none', array('id' => $data->id), true);
 			} else {
-				$data2['adopt_box'] = $this->load->view('adopt/adopted', array('adopter' => $data->adopter), true);
+				$data2['adopt_box'] = $this->load->view('adopt/adopted', array('adopter' => $data->adopter_name), true);
 			}
 			
 			$this->load->view('adopt_info_view', $data2);
