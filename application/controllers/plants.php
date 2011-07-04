@@ -33,6 +33,7 @@ class Plants extends CI_Controller {
 					'allowed_types' => 'jpg',
 					'file_name' => $filename,
 					'max_size' => '1000',
+					'overwrite' => true,
 				));
 				if (!$this->upload->do_upload('image')) {
 					if ($this->upload->display_errors() != "You did not select a file to upload.") {
