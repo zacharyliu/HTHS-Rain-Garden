@@ -9,7 +9,6 @@ class Adopt_model extends CI_Model {
 	public function get_info($id) {
 		$this->load->database();
 		
-		$this->db->select('plant_type_id');
 		$this->db->where('id', $id);
 		$this->db->from('garden');
 		$query = $this->db->get();

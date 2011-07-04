@@ -1,0 +1,1 @@
+This plant has been adopted by: <?php echo $adopter; ?>

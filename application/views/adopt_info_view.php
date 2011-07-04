@@ -27,6 +27,6 @@
         ?>
     </div>
     <div id="adopt_box">
-        Adopter:
+        <?php echo $adopt_box; ?>
     </div>
 </div>

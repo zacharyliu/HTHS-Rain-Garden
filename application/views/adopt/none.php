@@ -1,0 +1,1 @@
+This plant has not been adopted yet.

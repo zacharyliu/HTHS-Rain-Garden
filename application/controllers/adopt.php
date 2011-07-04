@@ -31,6 +31,13 @@ class Adopt extends CI_Controller {
 			foreach ($info as $key=>$value) {
 				$data2['info'][$key] = $value;
 			}
+			
+			if ($data->adopter == "") {
+				$data2['adopt_box'] = $this->load->view('adopt/none', '', true);
+			} else {
+				$data2['adopt_box'] = $this->load->view('adopt/adopted', array('adopter' => $data->adopter), true);
+			}
+			
 			$this->load->view('adopt_info_view', $data2);
 		}
 	}
