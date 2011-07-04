@@ -27,7 +27,11 @@ class Adopt extends CI_Controller {
 			$this->load->model('Plants_model');
 			$id = $data->plant_type_id;
 			$info = $this->Plants_model->get($id);
-			echo $info->title;
+			$data2['info'] = array();
+			foreach ($info as $key=>$value) {
+				$data2['info'][$key] = $value;
+			}
+			$this->load->view('adopt_info_view', $data2);
 		}
 	}
 	
