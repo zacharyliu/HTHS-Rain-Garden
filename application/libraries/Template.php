@@ -4,7 +4,6 @@ class Template {
     
     public function __construct() {
         $CI =& get_instance();
-        parent::__construct();
     }
     
     public function render($name, $content) {
