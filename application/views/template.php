@@ -10,6 +10,8 @@ $this->load->helper('url');
 <body>
 	<div id="wrap">
 		<div id="header">
+		<div id="cloud">
+		</div>
 		<h1><?php echo anchor("", "HTHS Rain Garden"); ?></h1>
 		<div id="user">
 		<?php
@@ -17,7 +19,9 @@ $this->load->helper('url');
 				echo 'Welcome, ' . $this->session->userdata('username') . ' | ' . anchor('user/logout', 'Logout');
 			} else {
 				$this->load->helper('url');
-				echo anchor('user/login', 'Login')/* . ' | ' . anchor('user/register', 'Register')*/;
+				/*echo anchor('user/login', 'Login') . ' | ' . anchor('user/register', 'Register')*/;
+				
+				$this->load->view('login_view_inline');
 			}
 		?>
 		</div>
