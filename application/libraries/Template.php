@@ -2,11 +2,9 @@
 
 class Template {
     
-    public function __construct() {
-        $CI =& get_instance();
-    }
-    
     public function render($name, $content) {
+        $CI =& get_instance();
+        
         $data['name'] = $name;
         $data['content'] = $content;
         
