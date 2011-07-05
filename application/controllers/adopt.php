@@ -3,13 +3,10 @@
 class Adopt extends CI_Controller {
 	
 	public function index() {
-		$this->load->model('Pages_model');
+		$name = "Adopt";
+		$content = $this->load->view('adopt_view', '', true);
 		
-		$data['name'] = "Adopt";
-		$data['content'] = $this->load->view('adopt_view', '', true);
-		$data['list'] = $this->Pages_model->get_list();
-		
-		$this->load->view('template', $data);
+		$this->template->render($name, $content);
 	}
 	
 	public function view($id, $format = "html") {
@@ -62,13 +59,10 @@ class Adopt extends CI_Controller {
 				$this->load->model('Plants_model');
 				$form_data['plants'] = $this->Plants_model->get_all();
 				
-				$data['content'] = $this->load->view('adopt_add_view', $form_data, true);
-				$data['name'] = "Add Garden Plant";
+				$content = $this->load->view('adopt_add_view', $form_data, true);
+				$name = "Add Garden Plant";
 				
-				$this->load->model('Pages_model');
-				$data['list'] = $this->Pages_model->get_list();
-				
-				$this->load->view('template', $data);
+				$this->template->render($name, $content);
 			}
 		} else {
 			$this->load->helper('url');
