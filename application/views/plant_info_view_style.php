@@ -21,6 +21,8 @@
 	-moz-border-radius: 10px;
 	-o-border-radius: 10px;
 	border: 5px solid white;
+        
+        text-align: center;
 }
 .plant_item div {
 	margin-bottom: 0.5em;
