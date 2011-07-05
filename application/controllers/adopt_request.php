@@ -36,10 +36,10 @@ class Adopt_request extends CI_Controller {
             
             $this->email->send();
             
-            $name = 'Confirm your adoption';
+            $title = 'Confirm your adoption';
             $content = 'Thank you, ' . $name . '. Please check your email to confirm your adoption of this plant.';
             
-            $this->template->render($name, $content);
+            $this->template->render($title, $content);
         }
     }
     
@@ -59,9 +59,9 @@ class Adopt_request extends CI_Controller {
             $this->db->where('id', $result->plant_id);
             $this->db->update('garden', $data);
             
-            $name = 'Adoption confirmed';
+            $title = 'Adoption confirmed';
             $content = 'Thank you, ' . $result->name . '!<br />You have successfully adopted this plant.';
-            $this->template->render($name, $content);
+            $this->template->render($title, $content);
         }
     }
     
