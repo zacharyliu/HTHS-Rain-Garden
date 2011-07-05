@@ -3,16 +3,14 @@
 class Plants extends CI_Controller {
 	
 	public function index() {
-		$this->load->model('Pages_model');
 		
-		$data['name'] = 'Plants';
-		$data['list'] = $this->Pages_model->get_list();
+		$name = 'Plants';
 		
 		$this->load->model('Plants_model');
 		$plant_data['data'] = $this->Plants_model->get_all();
-		$data['content'] = $this->load->view('plants_view', $plant_data, true);
+		$content = $this->load->view('plants_view', $plant_data, true);
 		
-		$this->load->view('template', $data);
+		$this->template->render($name, $content);
 	}
 	
 	public function edit($id) {
@@ -78,12 +76,10 @@ class Plants extends CI_Controller {
 				$data['image'] = $info->image;
 			}
 			
-			$data2['content'] = $this->load->view('plant_edit_view', $data, true);
-			$data2['name'] = 'Add/Edit Plant Type';
-			$this->load->model('Pages_model');
-			$data2['list'] = $this->Pages_model->get_list();
+			$content = $this->load->view('plant_edit_view', $data, true);
+			$name = 'Add/Edit Plant Type';
 			
-			$this->load->view('template', $data2);
+			$this->template->render($name, $content);
 		}
 	}
 }
