@@ -32,6 +32,9 @@ $this->load->helper('url');
 		<div id="dirt"></div>
 		</div>
 		<div id="main">
+		<div id="title">
+		<?php echo $name; ?>
+		</div>
 		<?php echo $content; ?>
 		</div>
 		<div id="footer">

@@ -125,6 +125,15 @@ background: linear-gradient(top, rgba(224,243,250,1) 0%,rgba(216,240,252,1) 50%,
 	border-radius: 0 0 5px 5px;
 }
 
+#title {
+	font-size: 1.4em;
+	font-weight: bold;
+	
+	border-bottom: 1px solid gray;
+	margin-bottom: 20px;
+	padding: 5px;
+}
+
 #footer {
 	margin: 10px 0 10px 0;
 	text-align: center;
