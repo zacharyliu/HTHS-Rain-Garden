@@ -17,6 +17,13 @@ $this->load->helper('url');
 	background-color: black;
 	opacity: 0.5;
 }
+#adopt_map a.adopted {
+	background-image: url("<?php echo base_url(); ?>img/heart.png");
+	background-position: center center;
+	background-repeat: no-repeat;
+	min-width: 20px;
+	min-height: 20px;
+}
 </style>
 
 <script type="text/javascript" src="<?php echo base_url(); ?>js/jquery.simplemodal.1.4.1.min.js"></script>
@@ -40,11 +47,22 @@ function view(id) {
 	});
 }
 
+function show_adopted() {
+	$.getJSON('<?php echo site_url(array('adopt', 'adopted')); ?>', function(data) {
+		for (item in data) {
+			$('#adopt_map a:eq(' + data[item].id + ')').addClass('adopted');
+		}
+	});
+	
+}
+
 $(function(){
 	$('#adopt_map a').click(function(){
 		view($(this).index());
 		return false;
 	});
+	
+	show_adopted();
 });
 </script>
 

@@ -14,7 +14,10 @@
    id="svg5149"
    version="1.1"
    inkscape:version="0.48.1 "
-   sodipodi:docname="New document 7">
+   sodipodi:docname="heart.svg"
+   inkscape:export-filename="C:\wamp\www\HTHS-Rain-Garden\img\heart.png"
+   inkscape:export-xdpi="4.4416456"
+   inkscape:export-ydpi="4.4416456">
   <defs
      id="defs5151" />
   <sodipodi:namedview
@@ -57,7 +60,7 @@
      id="layer1"
      transform="translate(-175.22949,-319.45849)">
     <path
-       style="fill:#ff6377;fill-opacity:1;stroke:#9c0000;stroke-width:7.62713242;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       style="fill:#ff6377;fill-opacity:1;stroke:#000000;stroke-width:7.62713241999999880;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        d="m 457.38466,723.80404 c 0,0 -179.63342,-38.06616 -244.59842,-144.02898 -21.0352,-34.31002 -72.944,-125.52451 18.80485,-178.76139 91.74887,-53.23687 158.68474,47.99343 158.68474,47.99343 0,0 19.9469,-107.81995 104.3613,-123.91487 84.41442,-16.09491 100.93544,78.35961 102.24542,133.15114 3.14827,131.68027 -139.49789,265.56067 -139.49789,265.56067 z"
        id="path5159"
        inkscape:connector-curvature="0"
