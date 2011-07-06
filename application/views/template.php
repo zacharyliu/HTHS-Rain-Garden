@@ -10,14 +10,17 @@ $this->load->helper('url');
 <body>
 	<div id="wrap">
 		<div id="header">
+		<div id="cloud"></div>
 		<h1><?php echo anchor("", "HTHS Rain Garden"); ?></h1>
 		<div id="user">
 		<?php
 			if ($this->session->userdata('logged_in')) {
-				echo 'Welcome, ' . $this->session->userdata('username') . ' | ' . anchor('user/logout', 'Logout');
+				echo 'Welcome, ' . $this->session->userdata('username') . ' <br /> ' . anchor('user/logout', 'Logout');
 			} else {
 				$this->load->helper('url');
-				echo anchor('user/login', 'Login')/* . ' | ' . anchor('user/register', 'Register')*/;
+				/*echo anchor('user/login', 'Login') . ' | ' . anchor('user/register', 'Register')*/;
+				
+				$this->load->view('login_view_inline');
 			}
 		?>
 		</div>
@@ -26,6 +29,7 @@ $this->load->helper('url');
 		<li><?php echo anchor($row->slug, $row->name); ?></li>
 		<?php endforeach; ?>
 		</ul>
+		<div id="dirt"></div>
 		</div>
 		<div id="main">
 		<?php echo $content; ?>
