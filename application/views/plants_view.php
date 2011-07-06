@@ -28,7 +28,7 @@ $this->table->set_template($template);
 echo $this->table->generate($table_data);
 ?>
 <?php if ($this->session->userdata('logged_in')): ?>
-<div class="plant_item" style="width: 100%;">
+<div class="plant_item" style="width: 300px; margin-left: auto; margin-right: auto;">
 	<div class="plant_new">
 	<?php echo anchor(array('plants', 'edit', 'new'), 'Add New'); ?>
 	</div>
