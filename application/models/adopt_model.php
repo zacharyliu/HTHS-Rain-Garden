@@ -3,7 +3,8 @@
 class Adopt_model extends CI_Model {
 	
 	public function get_all() {
-		
+		$query = $this->db->get('garden');
+		return $query->result();
 	}
 	
 	public function get_info($id) {

@@ -69,4 +69,16 @@ class Adopt extends CI_Controller {
 			redirect('adopt');
 		}
 	}
+	
+	public function adopted() {
+		$this->load->model('Adopt_model');
+		$plants = $this->Adopt_model->get_all();
+		$adopted = array();
+		foreach ($plants as $item) {
+			if ($item->adopter_name != "") {
+				$adopted[] = array('id' => $item->id, 'adopter_name' => $item->adopter_name, 'adopter_email' => $item->adopter_email);
+			}
+		}
+		$this->load->view('json', array('data' => $adopted));
+	}
 }
